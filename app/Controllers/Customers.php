@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 class Customers extends BaseController
 {
+    protected $helpers = ['url'];
+
     public function index()
     {
         $customers = [
