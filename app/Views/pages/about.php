@@ -9,7 +9,6 @@ $title = $title ?? 'About';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?> | POS System</title>
 </head>
-
 <body>
 
     <h1>About the POS System</h1>
@@ -23,11 +22,7 @@ $title = $title ?? 'About';
     </p>
 
     <p>
-        Static PHP arrays are currently used as temporary data sources instead of a database.
-    </p>
-
-    <p>
-        Database integration will be added in a later version.
+        Customer and user records are stored in a MySQL database and retrieved through CodeIgniter Models.
     </p>
 
     <nav>

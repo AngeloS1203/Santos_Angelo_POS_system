@@ -5,19 +5,17 @@ $users = $users ?? [];
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $title ?> | POS System</title>
+    <title><?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8') ?> | POS System</title>
 </head>
-
 <body>
 
     <h1>User Accounts</h1>
 
     <p>
-        Below are the staff records stored using a temporary static PHP array.
+        Below are the user records retrieved from the MySQL database.
     </p>
 
     <nav>
@@ -30,31 +28,23 @@ $users = $users ?? [];
     <br>
 
     <table border="1" cellpadding="10" cellspacing="0">
-
         <thead>
             <tr>
                 <th>Username</th>
                 <th>Full Name</th>
-                <th>Role</th>
+                <th>Created At</th>
             </tr>
         </thead>
-
         <tbody>
-
             <?php foreach ($users as $user): ?>
-
                 <tr>
-                    <td><?= $user['username'] ?></td>
-                    <td><?= $user['full_name'] ?></td>
-                    <td><?= $user['role'] ?></td>
+                    <td><?= htmlspecialchars($user['username'], ENT_QUOTES, 'UTF-8') ?></td>
+                    <td><?= htmlspecialchars($user['full_name'], ENT_QUOTES, 'UTF-8') ?></td>
+                    <td><?= htmlspecialchars($user['created_at'], ENT_QUOTES, 'UTF-8') ?></td>
                 </tr>
-
             <?php endforeach; ?>
-
         </tbody>
-
     </table>
 
 </body>
-
 </html>
